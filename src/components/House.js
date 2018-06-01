@@ -3,8 +3,9 @@ import axios from 'axios'
 export default function House(props){
 
     function deleteItem(id){
-        axios.delete(`/api/deletehouse/${id}`).then((res)=> {
-            // this.setstatehouses:res.data
+        axios.delete(`/api/deletehouse/${id}`)
+        .then((res)=> {
+            this.setState({houses:res.data})
         })
       }
 

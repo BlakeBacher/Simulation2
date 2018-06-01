@@ -49,3 +49,9 @@ export default class Dashboard extends Component{
         )
     }
 }
+
+function mapStateToProps(state) {
+    return {
+      number: state.num
+    }
+  }
