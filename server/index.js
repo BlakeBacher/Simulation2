@@ -12,6 +12,7 @@ massive(process.env.CONNECTION_STRING).then(db => app.set('db', db))
 
 app.get('/api/houses', controller.getList)
 app.post('/api/addhouse', controller.addhouse)
+app.delete('/api/deletehouse/:id', controller.deletehouse)
 
 
 const port = 4000

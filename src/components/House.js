@@ -1,6 +1,13 @@
 import React from 'react';
-
+import axios from 'axios'
 export default function House(props){
+
+    function deleteItem(id){
+        axios.delete(`/api/deletehouse/${id}`).then((res)=> {
+            // this.setstatehouses:res.data
+        })
+      }
+
    return(
         <div className = 'housediv'>
         Property Name:{props.name}
@@ -12,7 +19,7 @@ export default function House(props){
         State:{props.state}
         <br/>
         Zipcode:{props.zipcode}
-        <button className='deletebuthouse'>Delete</button>
+        <button className='deletebuthouse' onClick = {() => {deleteItem(props.id)}}>Delete</button>
         </div> 
         )
 }
